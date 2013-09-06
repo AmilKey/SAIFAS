@@ -7,24 +7,6 @@
 </head>
 <body>
 
-<script type="text/x-handlebars" data-template-name="todos/index">
-    <ul id="todo-list">
-
-        {{#each itemController="todo"}}
-        <li {{bind-attr class="isCompleted:completed isEditing:editing"}}>
-        {{#if isEditing}}
-        {{edit-todo class="edit" value=title focus-out="acceptChanges"
-        insert-newline="acceptChanges"}}
-        {{else}}
-        {{input type="checkbox" checked=isCompleted class="toggle"}}
-        <label {{action "editTodo" on="doubleClick"}}>{{title}}</label>
-        <button {{action "removeTodo"}} class="destroy"></button>
-        {{/if}}
-        </li>
-        {{/each}}
-
-    </ul>
-</script>
 
 <script type="text/x-handlebars" data-template-name="todos">
     <section id="todoapp">
@@ -83,5 +65,14 @@
 <script src="js/controllers/todos_controller.js"></script>
 <script src="js/controllers/todo_controller.js"></script>
 <script src="js/views/edit_todo_view.js"></script>
+
+<script src="js/routes/ActiveRoute.js"></script>
+<script src="js/routes/CompletedRoute.js"></script>
+<script src="js/routes/IndexRoute.js"></script>
+<script src="js/routes/TodosRoute.js"></script>
+
+
+
+
 </body>
 </html>
